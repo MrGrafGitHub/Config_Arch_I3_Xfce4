@@ -169,17 +169,13 @@ bar {
 	status_command i3status
 }
 
-
-
-
 for_window [all] title_window_icon on
 for_window [all] title_window_icon padding 5px
 #for_window [class="^.*"] border pixel 0 #0
-#for_window [class="kitty"] border pixel 0#, border normal 0
 
+for_window [all] border pixel 0, border normal 0
 
-
-
+default_floating_border normal 0
 
 # внутренние отступы
 gaps inner 10
@@ -195,12 +191,8 @@ bindsym $mod+shift+s exec flameshot gui
 
 bindsym $mod+o exec openconnect-gui
 
-
-
-
-
 # Блокировка экрана
-bindsym $mod+l exec /home/$USER/.config/scripts/lock
+#bindsym $mod+l exec /home/$USER/.config/scripts/lock
 
 # Автозапуск
 exec --no-startup-id numlockx on
