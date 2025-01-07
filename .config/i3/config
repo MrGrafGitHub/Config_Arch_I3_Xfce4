@@ -185,7 +185,7 @@ for_window [class="Sublime_text"] border pixel 0, border normal 0
 for_window [class="Microsoft-edge"] border pixel 0, border normal 0
 for_window [class="TelegramDesktop"] border pixel 0, border normal 0
 for_window [class="kitty"] border pixel 0, border normal 0
-for_window [class="Audacious"] border pixel 0, border normal 0
+for_window [class="Audacious"] border pixel 0, border normal 0 
 for_window [class="com-atlauncher-App"] border pixel 0, border normal 0
 for_window [class="Indicator.py"] border pixel 0, border normal 0
 for_window [class="KeePassXC"] border pixel 0, border normal 0
@@ -214,6 +214,9 @@ bindsym $mod+shift+s exec flameshot gui
 
 bindsym $mod+o exec openconnect-gui
 
+bindsym $mod+shift+p exec picom -b --config /home/mrgraf/.config/i3/picom
+bindsym $mod+shift+o exec killall -2 picom
+
 # Блокировка экрана
 #bindsym $mod+l exec /home/$USER/.config/scripts/lock
 
@@ -221,7 +224,7 @@ bindsym $mod+o exec openconnect-gui
 exec --no-startup-id numlockx on
 exec --no-startup-id nitrogen --restore; sleep 1 
 exec_always --no-startup-id autotiling
-exec --no-startup-id picom -b --config /home/mrgraf/.config/i3/picom
+#exec --no-startup-id picom -b --config /home/mrgraf/.config/i3/picom
 
 # Плавающие окна.
 # Что бы определить его класс нужно прописать в терминале "xprop" и тыкнуть на нужную программу, в терминале будет нужная инфа 
