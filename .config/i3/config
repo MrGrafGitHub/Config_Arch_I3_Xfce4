@@ -171,22 +171,26 @@ bar
 	status_command i3status
 }
 
-for_window [all] title_window_icon on
-for_window [all] title_window_icon padding 5px
-for_window [class="^.*"] border pixel 0 #0
-
-#Добавляет title стиму, срань.
+#Добавляет title всем окнам, включая стим., срань, не подходит..
 #for_window [all] border pixel 0, border normal 0
 
+for_window [all] title_window_icon yes
+for_window [all] title_window_icon padding 5px
+
+#Убирает заголовки всем окнам
+#for_window [class="^.*"] border pixel 0#, border normal 0
+
+
 for_window [class="Sublime_text"] border pixel 0, border normal 0
+for_window [class="Microsoft-edge"] border pixel 0, border normal 0
 for_window [class="TelegramDesktop"] border pixel 0, border normal 0
 for_window [class="kitty"] border pixel 0, border normal 0
-for_window [class="Microsoft-edge"] border pixel 0, border normal 0
 for_window [class="Audacious"] border pixel 0, border normal 0
 for_window [class="com-atlauncher-App"] border pixel 0, border normal 0
 for_window [class="Indicator.py"] border pixel 0, border normal 0
 for_window [class="KeePassXC"] border pixel 0, border normal 0
 for_window [class="flameshot"] border pixel 0, border normal 0
+for_window [class="Thunar"] border pixel 0, border normal 0
 
 #for_window [class="Xfce4-panel"] border pixel 0, border normal 0
 
@@ -194,7 +198,7 @@ for_window [class="flameshot"] border pixel 0, border normal 0
 
 
 
-#default_floating_border normal 0
+default_floating_border pixel 0
 
 # внутренние отступы
 gaps inner 10
