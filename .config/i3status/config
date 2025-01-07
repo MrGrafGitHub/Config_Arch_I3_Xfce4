@@ -1,0 +1,132 @@
+# ~/.config/i3status/config
+
+general {
+    colors = true # включение/выключение поддержки цветов true/false
+    interval = 1 # интервал обновления строки статуса, в секундах
+    output_format = "i3bar" # формат вывода, устанавливаем i3bar (JSON)
+}
+
+# порядок вывода модулей
+order += "memory"
+order += "cpu_usage"
+order += "cpu_temperature 0"
+order += "tztime local"
+order += "run_watch openvpn"
+order += "run_watch openconnect"
+order += "ethernet enp0s31f6"
+order += "volume master"
+order += "wireless _first_"
+order += "battery all"
+order += "disk /run/media/mrgraf/Portable_HDD_1TB/" 
+order += "disk /mnt/hdd/" 
+order += "disk /home/" 
+order += "disk /"
+
+
+# отслеживаемый накопитель
+disk "/run/media/mrgraf/Portable_HDD_1TB/" {
+    # доступные переменные:
+    # %used, %percentage_used - занятое пространство
+    # %free, %percentage_free - свободное пространство
+    # %avail, %percentage_avail - доступное пространство
+    # %total - всего
+    format = " Portable HDD (%used / %avail)"
+  
+
+    # будет окрашен в "color_bad" (по умолчанию красный)
+    # при достижении нижнего порога менее 10GB доступного пространства
+    low_threshold = "10"
+    threshold_type = "gbytes_avail"
+    format_below_threshold = " Warning: %avail"
+}
+
+# отслеживаемый накопитель
+disk "/home/" {
+    # доступные переменные:
+    # %used, %percentage_used - занятое пространство
+    # %free, %percentage_free - свободное пространство
+    # %avail, %percentage_avail - доступное пространство
+    # %total - всего
+    format = "  Home (%used / %avail)"
+
+    # будет окрашен в "color_bad" (по умолчанию красный)
+    # при достижении нижнего порога менее 10GB доступного пространства
+    low_threshold = "10"
+    threshold_type = "gbytes_avail"
+    format_below_threshold = " Warning: %avail"
+}
+
+# отслеживаемый накопитель
+disk "/mnt/hdd/" {
+    # доступные переменные:
+    # %used, %percentage_used - занятое пространство
+    # %free, %percentage_free - свободное пространство
+    # %avail, %percentage_avail - доступное пространство
+    # %total - всего
+    format = " hdd (%used / %avail)"
+
+    # будет окрашен в "color_bad" (по умолчанию красный)
+    # при достижении нижнего порога менее 10GB доступного пространства
+    low_threshold = "10"
+    threshold_type = "gbytes_avail"
+    format_below_threshold = " Warning: %avail"
+}
+
+# отслеживаемый накопитель
+disk "/" {
+    # доступные переменные:
+    # %used, %percentage_used - занятое пространство
+    # %free, %percentage_free - свободное пространство
+    # %avail, %percentage_avail - доступное пространство
+    # %total - всего
+    format = " Linux (%used / %avail)"
+
+    # будет окрашен в "color_bad" (по умолчанию красный)
+    # при достижении нижнего порога менее 10GB доступного пространства
+    low_threshold = "10"
+    threshold_type = "gbytes_avail"
+    format_below_threshold = " Warning: %avail"
+}
+
+# миниторинг оперативной памяти
+memory {
+    # доступные переменные:
+    # %total, percentage_total
+    # %used, percentage_used
+    # %free, percentage_free
+    # %available, percentage_available
+    # %shared, percentage_shared
+    format = " %used"
+
+    # порог, при котором вывод окрасится в
+    # желтый (degraded) или красный (critical)
+    # а формат вывода изменится на format_degraded
+    threshold_degraded = "1G"
+    threshold_critical = "200M"
+    format_degraded = "MEMORY < %available"
+}
+
+# температура процессора
+cpu_temperature 0 {
+    format = " %degrees"
+
+    # верхний порог температуры, при достижении которого
+    # вывод окрасится красным,
+    # и формат изменится на format_above_threshold
+    max_threshold = "80"
+    format_above_threshold = " %degrees"
+    path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
+}
+
+# использование центрального процессора
+cpu_usage {
+    # %usage - процентное использование ЦП
+    # %cpu<N> - начиная с %cpu0 и далее показывает использование ядер
+    format = " %usage"
+
+    # доступны параметры:
+    # degraded_threshold, окрас в желтый, по умолчанию 90
+    # max_threshold, окрас в красный, по умолчанию 95
+    # и кастомные форматы для них
+    # format_above_degraded_threshold и format_above_threshold
+}
