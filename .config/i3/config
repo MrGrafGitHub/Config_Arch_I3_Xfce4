@@ -144,7 +144,8 @@ bindsym $mod+Shift+e exec xfce4-session-logout
 bindsym $mod+r mode "resize"
 
 # Верхний бар с доступными свистелками перделками
-bar {   
+bar 
+{   
     output HDMI-0
     position top
     workspace_buttons yes
@@ -153,7 +154,8 @@ bar {
     padding 2px 6px 4px 1px
 
 
-        colors {
+        colors 
+        {
         background #1E1F29
         statusline #ffffff #that neon blue
         separator #666666                   
@@ -171,11 +173,28 @@ bar {
 
 for_window [all] title_window_icon on
 for_window [all] title_window_icon padding 5px
-#for_window [class="^.*"] border pixel 0 #0
+for_window [class="^.*"] border pixel 0 #0
 
-for_window [all] border pixel 0, border normal 0
+#Добавляет title стиму, срань.
+#for_window [all] border pixel 0, border normal 0
 
-default_floating_border normal 0
+for_window [class="Sublime_text"] border pixel 0, border normal 0
+for_window [class="TelegramDesktop"] border pixel 0, border normal 0
+for_window [class="kitty"] border pixel 0, border normal 0
+for_window [class="Microsoft-edge"] border pixel 0, border normal 0
+for_window [class="Audacious"] border pixel 0, border normal 0
+for_window [class="com-atlauncher-App"] border pixel 0, border normal 0
+for_window [class="Indicator.py"] border pixel 0, border normal 0
+for_window [class="KeePassXC"] border pixel 0, border normal 0
+for_window [class="flameshot"] border pixel 0, border normal 0
+
+#for_window [class="Xfce4-panel"] border pixel 0, border normal 0
+
+
+
+
+
+#default_floating_border normal 0
 
 # внутренние отступы
 gaps inner 10
