@@ -13,6 +13,7 @@
       <property name="size" type="uint" value="26"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="8"/>
+        <value type="int" value="10"/>
         <value type="int" value="2"/>
         <value type="int" value="3"/>
         <value type="int" value="9"/>
@@ -35,6 +36,7 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="telegramdesktop"/>
         <value type="string" value="javaembeddedframe"/>
         <value type="string" value="audacious"/>
         <value type="string" value="keepassxc"/>
@@ -43,6 +45,7 @@
         <value type="string" value="сетевое соединение ethernet «проводное подключение 1» активно"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="obs"/>
         <value type="string" value="Sigma file manager1"/>
         <value type="string" value="redshift"/>
         <value type="string" value="flameshot"/>
@@ -63,7 +66,7 @@
       <property name="tooltip-format" type="string" value="%A %d %B %Y"/>
       <property name="digital-layout" type="uint" value="3"/>
       <property name="digital-time-font" type="string" value="Liberation Sans 10"/>
-      <property name="digital-time-format" type="string" value="&lt;span color=&quot;white&quot;&gt; 🕓 &lt;b&gt;%H:%M &lt;/b&gt;&lt;/span&gt;"/>
+      <property name="digital-time-format" type="string" value="&lt;span color=&quot;white&quot;&gt; 🕓 &lt;b&gt;Arch %H:%M &lt;/b&gt;&lt;/span&gt;"/>
     </property>
     <property name="plugin-4" type="string" value="xkb">
       <property name="display-name" type="uint" value="1"/>
@@ -74,13 +77,21 @@
       <property name="digital-layout" type="uint" value="3"/>
       <property name="digital-time-font" type="string" value="Sans 10"/>
       <property name="timezone" type="string" value="Asia/Vladivostok"/>
-      <property name="digital-time-format" type="string" value="🕓 &lt;b&gt;%H:%M &lt;/b&gt;"/>
+      <property name="digital-time-format" type="string" value="&lt;b&gt; | &lt;/b&gt;🕓 &lt;b&gt; Хбк %H:%M&lt;/b&gt;&lt;b&gt; | &lt;/b&gt;"/>
     </property>
     <property name="plugin-3" type="string" value="clock">
       <property name="digital-layout" type="uint" value="2"/>
-      <property name="digital-date-format" type="string" value="&lt;span color=&quot;white&quot;&gt;&lt;b&gt;%A %d %B &lt;/b&gt;&lt;/span&gt;"/>
+      <property name="digital-date-format" type="string" value="&lt;span color=&quot;white&quot;&gt;&lt;b&gt;%A %d %B &lt;/b&gt;&lt;/span&gt;&lt;b&gt; | &lt;/b&gt;"/>
       <property name="digital-date-font" type="string" value="Sans 10"/>
     </property>
     <property name="plugin-9" type="string" value="netload"/>
+    <property name="plugin-10" type="string" value="clock">
+      <property name="tooltip-format" type="string" value="%A %d %B %Y"/>
+      <property name="mode" type="uint" value="2"/>
+      <property name="digital-layout" type="uint" value="3"/>
+      <property name="timezone" type="string" value="Asia/Omsk"/>
+      <property name="digital-time-format" type="string" value="&lt;b&gt; | &lt;/b&gt;🕓 &lt;b&gt;Омск %H:%M&lt;/b&gt;"/>
+      <property name="digital-time-font" type="string" value="Sans 10"/>
+    </property>
   </property>
 </channel>
